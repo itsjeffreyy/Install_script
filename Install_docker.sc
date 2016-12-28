@@ -1,6 +1,8 @@
+# This bash script is for Ubuntu.
+# If your OS is not Ubuntu, you should modify the part of sysrem restart parts.
 echo "  "
 echo "MSG: Install Docker-engine"
-#curl -sSL https://get.docker.com/ | sh
+curl -sSL https://get.docker.com/ | sh
 sudo usermod -aG docker $(whoami)
 #sudo service docker restart
 
@@ -14,14 +16,14 @@ sudo systemctl restart docker
 # Install docker-compose
 echo "  "
 echo "MSG: Install Docker-compose"
-#sudo curl -L "https://github.com/docker/compose/releases/download/1.9.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.9.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
 # Install docker-machine
 echo "  "
 echo "MSG: Install Docker-machine"
-#sudo curl -L "https://github.com/docker/machine/releases/download/v0.8.2/docker-machine-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-machine
+sudo curl -L "https://github.com/docker/machine/releases/download/v0.8.2/docker-machine-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-machine
 sudo chmod +x /usr/local/bin/docker-machine
 docker-machine -v
 
