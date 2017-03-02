@@ -10,5 +10,3 @@ sudo apt install r-base-core r-base-core-dbg gdebi-core
 # It's need the 'devtools' R package.
 # The R command is `install.packages('devtools')`
 # https://www.digitalocean.com/community/tutorials/how-to-install-r-packages-using-devtools-on-ubuntu-16-04
-
-test
