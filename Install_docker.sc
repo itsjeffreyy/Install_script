@@ -2,9 +2,13 @@
 # If your OS is not Ubuntu, you should modify the part of sysrem restart parts.
 echo "  "
 echo "MSG: Install Docker-engine"
-curl -sSL https://get.docker.com/ | sh
-sudo usermod -aG docker $(whoami)
-#sudo service docker restart
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+sudo apt update
+# 用 apt-cache policy 檢查一下優先性
+apt-cache policy docker-ce
+sudo apt install docker-ce
+sudo systemctl status docker
 
 # if you want to keep containers alive during daemon downtime.
 # Adding "--live-restore" after "ExecStart=/usr/bin/dockerd -H fd://" in the file "/lib/systemd/system/docker.service".
