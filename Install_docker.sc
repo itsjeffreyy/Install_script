@@ -1,7 +1,8 @@
 # This bash script is for Ubuntu.
 # If your OS is not Ubuntu, you should modify the part of sysrem restart parts.
 echo "  "
-echo "MSG: Install Docker-engine"
+echo "MSG: Install Docker-ce"
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 sudo apt update
